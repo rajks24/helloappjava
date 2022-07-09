@@ -2,7 +2,7 @@
 
 Helloapp for devops enthusiasts to assist in proof of concepts
 
-![App Version : v1.1.0](https://img.shields.io/badge/Version-1.0.0-green?style=flat-square) ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat-square&logo=java&logoColor=white) ![springboot](https://img.shields.io/badge/SpringBoot-%1997B5&.svg?style=flat-square&logo=springboot&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white)
+![App Version : v1.1.0](https://img.shields.io/badge/Version-1.1.0-green?style=flat-square) ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat-square&logo=java&logoColor=white) ![springboot](https://img.shields.io/badge/SpringBoot-%1997B5&.svg?style=flat-square&logo=springboot&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white)
 
 <hr>
 
@@ -49,21 +49,40 @@ A helloapp built with Java and Spring Boot for testing and POC purpose. This app
 3. Expose the greet api
 4. Get server info, once deployed on Kubernetes (on homepage and via api in json format)
 5. For running on Kubernetes, by using `kubectl kustomise` we can modify image (name & tag) and other configurable parans via updating kustomization.yaml in kubernetes folder.
-6. This app can be built in 2 ways
 
-   5.1 With Dockerfile added.
+   `$ kubectl kustomize ../kubernetes | kubectl -n helloappjava apply -f -`
 
-   5.2 With buildpack
+6. This app can be built in 3 ways
 
-   - The buildpack command to build OCI image for app
+   6.1 With Dockerfile added.
+   6.2 With skafold ( configuration attached )
+   6.3 With cloud-native buildpack
+
+   - The buildpack command to build OCI image for app using `pack CLI` locally using container runtime.
 
      ```
      $ pack build helloapp-img \
-     --path ~/files/helloapppython \
-     --env BP_CPYTHON_VERSION=3.9.13  \
-     --buildpack paketo-buildpacks/python  \
-     --builder paketobuildpacks/builder:full
+      --path ~/files/helloapppython \
+      --env BP_CPYTHON_VERSION=3.9.13  \
+      --buildpack paketo-buildpacks/python  \
+      --builder paketobuildpacks/builder:full \
+      --env BP_JVM_VERSION=17
      ```
+
+   - The buildpack command to build OCI image for app using `kpack [kp] CLI` in kubernetes cluster configured with remote image registry.
+
+     ```
+     $ kp image create helloappjava \
+      --tag registry.mylab.com/rsingh-lib/helloappjava \
+      --cluster-builder default \
+      --namespace helloappjava \
+      --wait \
+      --git https://github.com/rajks24/helloappjava.git \
+      --git-revision impl-1.1.0 \
+      --env BP_JVM_VERSION=17
+     ```
+
+     **NOTE:** we can change java version for buildpack with the `--env BP_JVM_VERSION=17`
 
 ### TODOS
 
