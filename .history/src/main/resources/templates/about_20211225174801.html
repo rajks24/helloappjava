@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>Helloapp</title>
+    <link rel="site icon" type="image/jpg" href="img/stars_black_24dp.svg" />
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+    href="css/materialize.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
+  <body>
+    <main>
+      <nav class="blue" role="navigation">
+        <div class="nav-wrapper container">
+          <a id="logo-container" href="/" class="brand-logo">
+              <!--i class="large material-icons">hotel_class</i--> <svg
+            xmlns="http://www.w3.org/2000/svg"
+            enable-background="new 0 0 24 24"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#000000"
+          >
+            <rect fill="none" height="24" width="24" />
+            <path
+              d="M8.58,10H1l6.17,4.41L4.83,22L11,17.31L17.18,22l-2.35-7.59L21,10h-7.58L11,2L8.58,10z M21.36,22l-1.86-6.01L23.68,13h-3.44 l-3.08,2.2l1.46,4.72L21.36,22z M17,8l-1.82-6l-1.04,3.45L14.91,8H17z"
+            />
+          </svg> Helloapp</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="about">About</a></li>
+            <i class="fa fa-code-fork" aria-hidden="true"></i>
+            <span
+              class="orange-text text-lighten-2"
+              th:text="${appversion}"
+            ></span>
+          </ul>
+
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="about">About</a></li>
+            <li class="center">
+                <i class="fa fa-code-fork red-text" aria-hidden="true"></i
+                ><span>.</span
+                ><span
+                  class="orange-text text-lighten-2"
+                  th:text="${appversion}"
+                ></span>
+              </li>
+            
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="section">
+          <div class="row">
+            <div class="col s12">
+              <div class="icon-block">
+                <h2 class="center light-blue-text">
+                    <i class="fa fa-cubes" aria-hidden="true"></i>
+                  <!--i class="material-icons">online_prediction</i-->
+                </h2>
+                <h4 class="center">Helloapp - POC Application</h5>
+                    <h6 class="grey-text" th:text="'App version: ' + ${appversion}"></h6>
+                <p class="light">
+                  This application is built for POC purposes. Community members
+                  are welcome to use it in their devops proof of concepts and
+                  demonstrations.
+                </p>
+                
+                <h5>Source Code</h5>
+                <p>
+                  This application is maintained at :<i class="fa fa-github" aria-hidden="true"></i>
+                  <a href="https://github.com/rajeshsingh624/helloapp" target="_blank" rel="noopener noreferrer">Helloapp github-repo</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+      </div>
+    </main>
+    <footer class="page-footer blue">
+      <div class="footer-copyright">
+        <div class="container center">
+          Made with <i class="tiny red-text material-icons">favorite</i>
+          for devops poc purpose
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>

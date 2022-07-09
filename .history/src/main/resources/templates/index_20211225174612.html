@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0"
+    />
+    <title>Helloapp</title>
+    <link rel="site icon" type="image/jpg" href="img/stars_black_24dp.svg" />
+
+    <!-- CSS  -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="css/materialize.min.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+    <link
+      href="css/style.css"
+      type="text/css"
+      rel="stylesheet"
+      media="screen,projection"
+    />
+  </head>
+  <body>
+    <nav class="blue" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo"
+          ><!--i class="large material-icons">hotel_class</i-->
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            enable-background="new 0 0 24 24"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#000000"
+          >
+            <rect fill="none" height="24" width="24" />
+            <path
+              d="M8.58,10H1l6.17,4.41L4.83,22L11,17.31L17.18,22l-2.35-7.59L21,10h-7.58L11,2L8.58,10z M21.36,22l-1.86-6.01L23.68,13h-3.44 l-3.08,2.2l1.46,4.72L21.36,22z M17,8l-1.82-6l-1.04,3.45L14.91,8H17z"
+            />
+          </svg>
+          Helloapp</a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a href="about">About</a></li>
+          <i class="fa fa-code-fork" aria-hidden="true"></i>
+          <span
+            class="orange-text text-lighten-2"
+            th:text="${appversion}"
+          ></span>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+          <li><a href="about">About</a></li>
+          <li class="center">
+            <i class="fa fa-code-fork red-text" aria-hidden="true"></i
+            ><span>.</span
+            ><span
+              class="orange-text text-lighten-2"
+              th:text="${appversion}"
+            ></span>
+          </li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+      </div>
+    </nav>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br />
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel light-blue lighten-4">
+              <h1
+                id="hellomsg"
+                class="header center indigo-text"
+                th:text="${greet}+', ' + ${name} + ' !'"
+              />
+              <div class="row center">
+                <h5 class="header col s12 light">
+                  Helloapp for devops enthusiasts to assist in proof of concepts
+                </h5>
+                <div class="row center">
+                  <a
+                    onclick="changetext()"
+                    id="click-button"
+                    class="
+                      btn-large btn-floating
+                      waves-effect waves-light
+                      orange
+                      pulse
+                    "
+                    ><i
+                      id="click_icon"
+                      class="fa fa-hand-o-up"
+                      aria-hidden="true"
+                    ></i>
+                    <!--i id="click_icon" class="large material-icons"
+                      >touch_app</i --></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <!--   Icon Section   -->
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="fa fa-bolt" aria-hidden="true"></i>
+                <!--i class="material-icons">flash_on</i-->
+              </h2>
+              <h5 class="center">Devops</h5>
+
+              <p class="light">
+                DevOps is a set of practices that combines software development
+                (Dev) and IT operations (Ops). It aims to shorten the SDLC and
+                provide continuous delivery with high software quality. DevOps
+                initiatives can create cultural changes by transforming the way
+                operations, developers, and testers collaborate.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <!--i class="material-icons">group</i-->
+              </h2>
+              <h5 class="center">DevSecOps</h5>
+
+              <p class="light">
+                DevSecOps introduces security processes from the beginning of
+                the development cycle. DevSecOps stands for development,
+                security, and operations — automates the integration of security
+                at every phase of the SDLC, from initial design through
+                integration, testing, deployment, and software delivery.
+              </p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="icon-block">
+              <h2 class="center light-blue-text">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+                <!--i class="material-icons">settings</i-->
+              </h2>
+              <h5 class="center">GitOps</h5>
+
+              <p class="light">
+                GitOps is a way of managing your infrastructure and applications
+                so that whole system is described declaratively and version
+                controlled (most likely in a Git repository), and having an
+                automated process that ensures that the deployed environment
+                matches the state specified in a repository.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+    </div>
+
+    <footer class="page-footer blue">
+      <div class="footer-copyright">
+        <div class="container center">
+          Made with
+          <!--i class="tiny red-text material-icons">favorite</i-->
+          <i class="fa fa-heart red-text" aria-hidden="true"></i>
+          for devops poc purpose
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/init.js"></script>
+  </body>
+</html>
