@@ -92,25 +92,33 @@
                 <h5 class="header col s12 light">
                   Helloapp for devops enthusiasts to assist in proof of concepts
                 </h5>
-                <div class="row center">
-                  <a
-                    onclick="changetext()"
-                    id="click-button"
-                    class="
+                <div class="row">
+                  <form class="col s12" method="POST" action="/greet">
+                   
+                        Greet : 
+                        <div class="input-field inline">
+                          <input id="username" type="text" name = "username" class="validate">
+                          <label for="username">Name</label>
+                        </div>
+                    
+                    <div class="row center">
+                      <button id="greetuser" class="
                       btn-large btn-floating
                       waves-effect waves-light
                       orange
                       pulse
-                    "
-                    ><i
-                      id="click_icon"
-                      class="fa fa-hand-o-up"
-                      aria-hidden="true"
-                    ></i>
-                    <!--i id="click_icon" class="large material-icons"
-                      >touch_app</i --></a
-                  >
+                    " type="submit" name="action">
+                    <i
+                    id="click_icon"
+                    class="fa fa-hand-o-up"
+                    aria-hidden="true"
+                  ></i>
+                      </button>
+                      
+                    </div>
+                  </form>
                 </div>
+                
               </div>
             </div>
           </div>
