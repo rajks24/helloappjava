@@ -55,31 +55,33 @@ A helloapp built with Java and Spring Boot for testing and POC purpose. This app
 6. This app can be built in 3 ways
 
    6.1 With Dockerfile added.
+   
    6.2 With skafold ( configuration attached )
+   
    6.3 With cloud-native buildpack
+   
 
    - The buildpack command to build OCI image for app using `pack CLI` locally using container runtime.
 
      ```
-     $ pack build helloapp-img \
-      --path ~/files/helloapppython \
-      --env BP_CPYTHON_VERSION=3.9.13  \
-      --buildpack paketo-buildpacks/python  \
-      --builder paketobuildpacks/builder:full \
-      --env BP_JVM_VERSION=17
+     $ pack build helloappjava \
+       --path ~/files/helloappjava \
+       --buildpack paketo-buildpacks/java  \
+       --builder paketobuildpacks/builder:full \
+       --env BP_JVM_VERSION=17
      ```
 
    - The buildpack command to build OCI image for app using `kpack [kp] CLI` in kubernetes cluster configured with remote image registry.
 
      ```
      $ kp image create helloappjava \
-      --tag registry.mylab.com/rsingh-lib/helloappjava \
-      --cluster-builder default \
-      --namespace helloappjava \
-      --wait \
-      --git https://github.com/rajks24/helloappjava.git \
-      --git-revision impl-1.1.0 \
-      --env BP_JVM_VERSION=17
+        --tag registry.mylab.com/rsingh-lib/helloappjava \
+        --cluster-builder default \
+        --namespace helloappjava \
+        --wait \
+        --git https://github.com/rajks24/helloappjava.git \
+        --git-revision impl-1.1.0 \
+        --env BP_JVM_VERSION=17
      ```
 
      **NOTE:** we can change java version for buildpack with the `--env BP_JVM_VERSION=17`
