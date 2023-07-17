@@ -10,4 +10,4 @@ LABEL "source"="https://github.com/rajks24/helloappjava.git"
 COPY target/*.jar app.jar
 
 # Launch application
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java",$JAVA_OPTS, "-jar","/app.jar"]
