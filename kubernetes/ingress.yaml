@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: helloappjava
+spec:
+  rules:
+  - host: helloapp.txvlab.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: helloappjava
+            port:
+              number: 8080
+        path: /
+        pathType: ImplementationSpecific
+
