@@ -15,4 +15,4 @@ deploy:
 portForward:
 - resourceType: service
   resourceName: helloappjava
-  port: 8080      
+  port: 80      

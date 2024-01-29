@@ -7,4 +7,4 @@ resources:
 images:
 - name: helloappjava
   newName: ghcr.io/rajks24/helloappjava
-  newTag: 1.1.0
+  newTag: "2.0"
