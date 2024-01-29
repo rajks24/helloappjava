@@ -1,4 +1,5 @@
-FROM openjdk:17-alpine
+FROM amazoncorretto:17-alpine3.16-jdk
+#FROM openjdk:17-alpine
 #FROM adoptopenjdk/openjdk11:alpine-jre
 
 LABEL "title"="Helloappjava"
