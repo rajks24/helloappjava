@@ -4,14 +4,14 @@ metadata:
   name: helloappjava
 spec:
   rules:
-  - host: helloapp.txvlab.com
+  - host: helloapp.apps.txvlab.local
     http:
       paths:
       - backend:
           service:
             name: helloappjava
             port:
-              number: 8080
+              number: 80
         path: /
         pathType: ImplementationSpecific
 

@@ -2,7 +2,7 @@
 
 Helloapp for devops enthusiasts to assist in proof of concepts
 
-![App Version : v1.1.0](https://img.shields.io/badge/Version-1.1.0-green?style=flat-square) ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat-square&logo=java&logoColor=white) ![springboot](https://img.shields.io/badge/SpringBoot-%1997B5&.svg?style=flat-square&logo=springboot&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white)
+![App Version : v2.0](https://img.shields.io/badge/Version-2.0-green?style=flat-square) ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=flat-square&logo=java&logoColor=white) ![springboot](https://img.shields.io/badge/SpringBoot-%1997B5&.svg?style=flat-square&logo=springboot&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white) ![Kubernetes](https://img.shields.io/badge/Kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white)
 
 <hr>
 
@@ -80,7 +80,7 @@ A helloapp built with Java and Spring Boot for testing and POC purpose. This app
         --namespace helloappjava \
         --wait \
         --git https://github.com/rajks24/helloappjava.git \
-        --git-revision impl-1.1.0 \
+        --git-revision impl-2.0 \
         --env BP_JVM_VERSION=17
      ```
 

@@ -15,10 +15,10 @@ spec:
         app: helloappjava
     spec:
       containers:
-      - image: helloappjava
+      - image: ghcr.io/rajks24/helloappjava:2.0
         name: helloappjava
         ports:
-        - containerPort: 8080
+        - containerPort: 80
         env:
          - name: JAVA_OPTS
            value: -Xmx64m -Xms64m
